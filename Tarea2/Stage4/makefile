@@ -1,15 +1,17 @@
-JFLAGS = -g -encoding ISO8859_1  # -encoding in case latin characters are used
+JFLAGS = -g --module-path $(PATH_TO_FX) --add-modules javafx.controls,javafx.media -encoding ISO8859_1  # -encoding in case latin characters are used
 JC = javac
 JVM= java  # Added by Agust�n Gonz�lez
 .SUFFIXES: .java .class
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
-CLASSES = Component.java Publisher.java Subscriber.java \
-Follower.java Recorder.java Monitor.java  \
+CLASSES = Broker.java CarFollower.java Component.java  /
+Follower.java GPSCarPublisher.java GPSPosition.java /
+Monitor.java Publisher.java Recorder.java Stage4.java /
+Subscriber.java Topic.java VideoFollower.java VideoPublisher.java
 Broker.java Topic.java T1Stage4.java
 
-MAIN = T1Stage4
+MAIN = Stage4
 
 default: classes
 
@@ -20,3 +22,4 @@ run:
 
 clean:
 	$(RM) *.class
+

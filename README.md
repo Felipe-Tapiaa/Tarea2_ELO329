@@ -15,23 +15,24 @@
 
 ## Cómo compilar
 
+Para compilar esta tarea ya que ocupa JAVAFX se tiene que tener las librerias correspondientes y tener el path dependiendo del sistema operativo
+Se puede compilar con el makefile con GitBash ya que el cmd de windows en mi caso no tiene instalado los comandos make, para compilar en GitBash se ocupa el siguiente comando 
+
 Para compilar todos los archivos `.java`, utiliza el Makefile:
 
 ```
-make
+export PATH_TO_FX="/c/Users/felip/Documents/U/ELO329/javafx-sdk-24.0.1/lib"
+make run
+
 ```
-
-Esto generará todos los archivos `.class` necesarios para ejecutar el programa.
-
+Reemplazando con su respectiva ruta
+la otra opcion es compilar y ejecutar en algun editor de texto como IntelliJ o VS y ocupar los siguientes comandos
 ---
 
-## Cómo ejecutar
-
-Cada etapa se ejecuta de la siguiente manera:
-
-### Stage 
+### Stage 4
 ```
-make run
+javac --module-path "C:\Users\felip\Documents\U\ELO329\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.media *.java
+java --module-path "C:\Users\felip\Documents\U\ELO329\javafx-sdk-24.0.1\lib" --add-modules javafx.controls Stage4
 ```
 
 - Finalizar entrada con `Ctrl + Z` + `Enter`.
